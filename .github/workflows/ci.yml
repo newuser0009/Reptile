@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: clone
+      run: git clone https://github.com/f0rb1dd3n/Reptile.git
+    - name: APT
+      run: apt install build-essential libncurses-dev linux-headers-$(uname -r)
+    - name: configure and make
+      run: |
+        cd Reptile
+        make defconfig
+        make
+        make install
