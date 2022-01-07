@@ -3,17 +3,15 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
-  build:
+  build18_04:
 
     runs-on: ubuntu-18.04
 
     steps:
     - name: clone
-      run: git clone https://github.com/f0rb1dd3n/Reptile.git
+      run: git clone https://github.com/newuser0009/Reptile.git
     - name: APT
       run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
     - name: configure and make
@@ -23,3 +21,36 @@ jobs:
         make defconfig
         make
         make install
+  build16_04:
+
+    runs-on: ubuntu-16.04
+
+    steps:
+    - name: clone
+      run: git clone https://github.com/newuser0009/Reptile.git
+    - name: APT
+      run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
+    - name: configure and make
+      run: |
+        sudo su root
+        cd Reptile
+        make defconfig
+        make
+        make install
+  build20_04:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: clone
+      run: git clone https://github.com/newuser0009/Reptile.git
+    - name: APT
+      run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
+    - name: configure and make
+      run: |
+        sudo su root
+        cd Reptile
+        make defconfig
+        make
+        make install
+  
