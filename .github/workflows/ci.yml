@@ -20,6 +20,10 @@ jobs:
         sudo make defconfig
         sudo make
         sudo make install
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ub16
+        path: /home/runner/work/Reptile/Reptile/Reptile
   build16_04:
 
     runs-on: ubuntu-16.04
@@ -31,10 +35,14 @@ jobs:
       run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
     - name: configure and make
       run: |
-        sudo cd Reptile
+        cd Reptile
         sudo make defconfig
         sudo make
         sudo make install
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ub16
+        path: /home/runner/work/Reptile/Reptile/Reptile
   build20_04:
 
     runs-on: ubuntu-20.04
@@ -46,8 +54,11 @@ jobs:
       run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
     - name: configure and make
       run: |
-        sudo cd Reptile
+        cd Reptile
         sudo make defconfig
         sudo make
         sudo make install
-  
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ub16
+        path: /home/runner/work/Reptile/Reptile/Reptile
