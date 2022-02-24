@@ -11,46 +11,43 @@ jobs:
 
     steps:
     - name: clone
-      run: git clone https://github.com/newuser0009/Reptile.git
+      run: sudo git clone https://github.com/newuser0009/Reptile.git
     - name: APT
       run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
     - name: configure and make
       run: |
-        sudo su root
         cd Reptile
-        make defconfig
-        make
-        make install
+        sudo make defconfig
+        sudo make
+        sudo make install
   build16_04:
 
     runs-on: ubuntu-16.04
 
     steps:
     - name: clone
-      run: git clone https://github.com/newuser0009/Reptile.git
+      run: sudo git clone https://github.com/newuser0009/Reptile.git
     - name: APT
       run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
     - name: configure and make
       run: |
-        sudo su root
-        cd Reptile
-        make defconfig
-        make
-        make install
+        sudo cd Reptile
+        sudo make defconfig
+        sudo make
+        sudo make install
   build20_04:
 
     runs-on: ubuntu-20.04
 
     steps:
     - name: clone
-      run: git clone https://github.com/newuser0009/Reptile.git
+      run: sudo git clone https://github.com/newuser0009/Reptile.git
     - name: APT
       run: sudo apt install build-essential libncurses-dev linux-headers-$(uname -r)
     - name: configure and make
       run: |
-        sudo su root
-        cd Reptile
-        make defconfig
-        make
-        make install
+        sudo cd Reptile
+        sudo make defconfig
+        sudo make
+        sudo make install
   
